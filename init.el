@@ -14,10 +14,11 @@
   ;;(add-to-list 'load-path "<path where use-package is installed>")
   (require 'use-package))
 
-(use-package org-mode
-  :requires org)
+(setq use-package-always-ensure t)
 
-(use-package nov-mode
-  :requires nov)
+(use-package org)
+(use-package nov)
+(use-package evil)
+(use-package hydra)
 
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))

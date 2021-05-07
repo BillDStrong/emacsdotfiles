@@ -20,5 +20,38 @@
 (use-package nov)
 (use-package evil)
 (use-package hydra)
+(use-package emacs-everywhere)
+(use-package emamux)
 
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
+(use-package modus-themes
+  :ensure
+  :init
+  ;; Add all your customizations prior to loading the themes
+  (setq modus-themes-slanted-constructs t
+        modus-themes-bold-constructs nil
+        modus-themes-region 'no-extend)
+
+  ;; Load the theme files before enabling a theme
+  (modus-themes-load-themes)
+  :config
+  ;; Load the theme of your choice:
+  ;;(modus-themes-load-operandi)
+  ;; OR
+  (modus-themes-load-vivendi)
+  :bind ("<f5>" . modus-themes-toggle))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(emamux emacs-everywhere modus-themes use-package nov hydra evil)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
